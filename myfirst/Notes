@@ -1,0 +1,20 @@
+For eclipse in mac:
+一开始创建java project 时，不要直接finish
+点next 然后根据需要 是否勾选 generate module-info.java
+此处uncheck 再finish
+
+创建show.java
+点击navigator 中src file
+右击 new class
+name  写 show 记住check 生成 static main
+ok
+然后在另一个file dir 中运行时，javac show.java  java show.java
+会出现
+Error: Could not find or load main class show
+Caused by: java.lang.NoClassDefFoundError: helo/show (wrong name: show)
+
+solution
+1. 去掉 show.java 中 package helo 一句
+2. java -cp . show
+
+ok
