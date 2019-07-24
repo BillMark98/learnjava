@@ -1,3 +1,4 @@
+// import java.util.Scanner;
 public class MyNumber
 {
     public static int getNumber(char upperCase)
@@ -52,5 +53,23 @@ public class MyNumber
             }
         }
         System.out.print('\n');
+    }
+    public static boolean isPrime(int number)
+    {
+        for(int divisor = 2; divisor <= number/2; divisor++)
+        {
+            if(number % divisor == 0)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static int rowDice()
+    {
+        // if (int)Math.random() * 6 + 1;
+        // will always generate 1
+        int num = (int)(Math.random() * 6) + 1;
+        return num;
     }
 }
