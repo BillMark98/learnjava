@@ -22,5 +22,6 @@ public class Student
         Student temp = new Student("Me",20);
         System.out.println("Student info, name: " + temp.getName() + " age: " 
         + temp.getAge());
+        System.out.println("Bye");
     }
 }
