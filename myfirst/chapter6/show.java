@@ -68,6 +68,7 @@ public class show {
 			}
 		}
 		double loseRate = (double) Loses/N;
+		// Craps();
 		System.out.println("The approximate lose rate is " + loseRate );
 	}
 	public static boolean isPalindrome(int val)

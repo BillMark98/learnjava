@@ -67,8 +67,12 @@ public class MyNumber
     }
     public static int rowDice()
     {
-        // if (int)Math.random() * 6 + 1;
+        // if 
+        // int num = (int)(Math.random() * 6) ;
         // will always generate 1
+        // since (int) Math.random() * 6 + 1
+        // will first cast Math.random() to integer which is 0
+        // so the result will always be 0 + 1 = 1
         int num = (int)(Math.random() * 6) + 1;
         return num;
     }

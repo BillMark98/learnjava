@@ -1,0 +1,21 @@
+1. 一开始运行 javac Student.java
+之后 java Student
+报错
+Error: Could not find or load main class Student
+Caused by: java.lang.NoClassDefFoundError: mypackage/Student (wrong name: Student)
+看目录 mypackage 下面没有 .class 文件
+运行 javac -d . Student.java 
+mypackage下有 Student.class
+试着运行 java Student
+仍然是上面的错误
+因为要specify package name
+java mypackage.Student 
+运行成功
+2. 在chapter5 的上一级目录 运行 mypackage.Student
+报错
+Error: Could not find or load main class mypackage.Student
+Caused by: java.lang.ClassNotFoundException: mypackage.Student
+说明 classpath 不对
+运行
+java -cp ./chapter5 mypackage.Student
+成功
