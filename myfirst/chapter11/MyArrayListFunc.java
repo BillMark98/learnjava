@@ -42,7 +42,7 @@ public class MyArrayListFunc {
             else {
                 // have to proceed to another integer instead of hoverint over the same number
                 // e.g 5 5 5 since count = 3, will not delete 5, then index proceed to the second 5
-                // then the count will be 2, now will delete 5 , what we dont want to happen
+                // then the count will be 2, now will delete 5 , what we dont want it to happen
                 while(index < list.size() && list.get(index).equals(n)) {
                     index++;
                 }

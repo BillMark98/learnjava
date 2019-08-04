@@ -19,3 +19,8 @@ Caused by: java.lang.ClassNotFoundException: mypackage.Student
 运行
 java -cp ./chapter5 mypackage.Student
 成功
+3. 用git push 时
+一开始用ssh 设置的 git remote add (name) ..(ssh address)
+git push 一直没反应
+后改用 http 的地址
+可以了

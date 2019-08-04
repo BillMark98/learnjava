@@ -1,4 +1,4 @@
-import java.util.ArrayList;;
+import java.util.ArrayList;
 public class PerfectSquare {
     private ArrayList<Integer> list;
     private int squareToFind;
