@@ -1,0 +1,78 @@
+1. 
+Test11.java:14: error: cannot find symbol
+            list.add(Integer(next));
+                     ^
+  symbol:   method Integer(int)
+  location: class Test11
+
+Solution:  use 
+    list.add(new Integer(next));
+
+2.
+when compile after correction:
+
+javac Test11.java MyArrayListFunc.java 
+Note: Test11.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+
+java.lang.Integer.Integer(int value)
+Deprecated It is rarely appropriate to use this constructor. The static factory valueOf(int) is generally a better choice, as it is likely to yield significantly better space and time performance.
+
+Constructs a newly allocated Integer object that represents the specified int value.
+
+Parameters:
+
+value the value to be represented by the Integer object.
+The constructor Integer(int) is deprecated since version 9Java(67110271)
+Quick Fix...
+Peek Problem
+
+Solution:
+    use :
+    list.add(next) 
+    instead
+
+3. 一开始 运行 PerfectNumber 结果都是1
+发现忘了在 FindNumberToSquare 一开始忘了call FindPrimeFactor
+而直接对list 操作， 自然不对因为list size 0
+所以
+prod = 1 不会变
+
+4. 改动之后，仍然不对
+应该是在 MyArrayListFunc 的 DeleteEven 那里
+if(count % 2 == 0) {
+                // element appears even times, delete that element
+                for(int delIndex = 0; delIndex < list.size(); delIndex++) {
+                    if(list.remove(n)) {
+                        delIndex--;
+                    }
+                }
+                // since delete the element at index
+  -> important              index--;
+            }
+
+没有 index --  则 会漏掉元素
+
+另外在
+ while(index < list.size() && list.get(index).equals(n)) {
+                    index++;
+                }
+                index--;
+
+                中 要使用此while loop 具体 见此loop 前的comments
+                还要check index valid 因为可能超过数组大小， 结果
+    
+Enter an integer m: Exception in thread "main" java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
+        at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+        at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+        at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
+        at java.base/java.util.Objects.checkIndex(Objects.java:372)
+        at java.base/java.util.ArrayList.get(ArrayList.java:458)
+        at MyArrayListFunc.DeleteEvenTimesElements(MyArrayListFunc.java:46)
+        at PerfectSquare.FindNumberToSquare(PerfectSquare.java:20)
+        at Test11.main(Test11.java:27)
+
+5. to do:
+use package to call isPrime from the MyNumber.java
+not writing a copy of it
